@@ -1,0 +1,44 @@
+#' Writing center data set
+#'
+#' Sample data from a community college used to illustrate program evaluation methods.  The data set contains students' first enrollment/attempt in ENG 1, a first year college level writing course, over several years.  Students may choose to receive additional support outside of the classroom at the college's writing center by enrolling in a 0.5-unit writing center/conference support course.  Students may use the writing center as a study center where they have access to computers, dictionaries, thesauri, etc.  At the center, students may also schedule 1:1 conferences with the instructor on duty, to get assistance and/or feedback on their writing by bringing a writing prompt or draft of their paper.  Students registered for this support course are required to spend at least 12 hours in the center, and to have at least 2 formal conferences.
+#' @format A data frame with student level data attributes:
+#' \describe{
+#'   \item{Student_ID}{a unique identifier of the student.}
+#'   \item{Term}{Describes the year and term (fall, spring, summer) in which the student was enrolled in ENG 1.}
+#'   \item{Section_ID}{an identifier that describes the ENG 1 section for which the student was enrolled in.  Students with the same \code{Section_ID} are considered to be in the same class.}
+#'   \item{Instructor_ID}{an identifier that describes the instructor that taught the section.  Students with the same \code{Instructor_ID} were taught by the same instructor.}
+#'   \item{Main_CourseID}{The course for which the student was enrolled in.  For this sample data set, this field should be \code{ENG 1} for all rows.}
+#'   \item{Gender}{gender (one of: \code{Male}, \code{Female}, \code{Decline}).}
+#'   \item{Age}{the age of the student when they enrolled in ENG 1.}
+#'   \item{Ethnicity}{ethnicity (one of: \code{African American}, \code{Asian}, \code{Decline to State}, \code{Hispanic / Latino}, \code{Mixed Ethnicity}, \code{Native American}, \code{Pacific Islander}, or \code{White, Non-Hispanic}).}
+#'   \item{FirstGen}{1 (yes) or 0 (no) indicating whether or not a student is a first generation college student.}
+#'   \item{Military}{1 (yes) or 0 (no) indicating whether or not a student is using military veteran benefits (ie, a veteran).}
+#'   \item{FosterYouth}{1 (yes) or 0 (no) indicating whether or not a student was a foster youth.}
+#'   \item{DSPS}{1 (yes) or 0 (no) indicating whether or not a student has ever leveraged the Disabled Student Programs and Services (eg, has a learning disability and requires extended test time).}
+#'   \item{FinAid}{1 (yes) or 0 (no) indicating whether or not a student has ever received federal or state financial aid at the district.}
+#'   \item{Units_Attempted_Beg_Of_Term}{the total number of units the student attempted at the district prior to the start of the term for which they enrolled in the current course.}
+#'   \item{GPA_Beg_Of_Term}{the student's cumulative grade point average (GPA) at the district prior to the start of the term for which they enrolled in the current course.  Students that have not attempted any courses previously will have a GPA of 0.}
+#'   \item{TermUnitsAttempted}{the total number of units attempted in the current term.}
+#'   \item{K12_Student}{1 (yes) or 0 (no) indicating whether or not a student is K-12 special admit student taking college courses.}
+#'   \item{First_Time_College_Student}{1 (yes) or 0 (no) indicating whether or not a student is a first time college student (not a university student taking courses at a community college, not a continuing student,  not a returning student, etc.).}
+#'   \item{Nonresident_Tuition_Exempt}{1 (yes) or 0 (no) indicating whether or not a student is exempt from nonresident tuition based on AB 540.}
+#'   \item{International}{1 (yes) or 0 (no) indicating whether or not a student is on an international student visa.}
+#'   \item{Nonresident}{1 (yes) or 0 (no) indicating whether or not a student is not a resident of the college's state.}
+#'   \item{WR_Center}{1 (yes) or 0 (no) indicating whether or not a student is enrolled in the writing center support section.}
+#'   \item{Main_Course_SuccessFlag}{1 (yes) or 0 (no) indicating whether or not a student was successful (grades of A, B, C, or P) in the main writing course, \code{Main_CourseID}.}
+#'   \item{Main_Course_GradePoints}{a value of 4 (A), 3 (B), 2 (C), 1 (D), or 0 (F) indicating the student's grade in \code{Main_CourseID}.}
+#'   \item{HS_GPA}{student's high school GPA, if available.}
+#'   \item{Online}{1 (yes) or 0 (no) indicating whether or not the student's \code{Main_CourseID} section was an online or in-person.}
+#'   \item{N_Center_Visits}{the student's number of writing center visits in the term.}
+#'   \item{Center_Attendance_Hours}{the total amount of time the student spent at the writing center in the term, measured in hours.}
+#'   \item{N_Conf}{the number of formal conferences the student had with an on-duty instructor at the writing center.}
+#' }
+#' @docType data
+#' 
+#' @usage data(writing_center)
+#'
+#' @keywords datasets
+#'
+#' @examples
+#' data(writing_center)
+"writing_center"
