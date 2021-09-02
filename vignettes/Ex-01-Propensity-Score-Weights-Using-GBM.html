@@ -12,7 +12,7 @@
 
 <meta name="author" content="Vinh Nguyen" />
 
-<meta name="date" content="2021-08-31" />
+<meta name="date" content="2021-09-01" />
 
 <title>Example 1: Propensity Score Weights Using Gradient Boosted Trees</title>
 
@@ -156,7 +156,7 @@ code span.ot { color: #007020; }
 <div class="inner">
 <h1 class="title toc-ignore">Example 1: Propensity Score Weights Using Gradient Boosted Trees</h1>
 <h3 class="author">Vinh Nguyen</h3>
-<h3 class="date">2021-08-31</h3>
+<h3 class="date">2021-09-01</h3>
 </div>
 </header>
 
@@ -189,7 +189,7 @@ code span.ot { color: #007020; }
 <li>Match participants and non-participants based on the estimated propensity scores (similar values are matched), and from this matched sample where some observations are excluded, draw inference between the two groups. If there are no unmeasured confounders (an untestable assumption), then conditioning on the propensity scores in this way allows one to estimate the causal effect of the program.</li>
 <li>Use the estimated propensity scores to weight each observation in the participant group and non-participant group. The weights could be derived to allow one to estimate the average treatment effect (ATE) on the entire population (i.e., the effect if the program were to generalize to the entire student population) or the average treatment effect on the treated (ATT; the effect if the program was specific to those that self-selected into the program). The idea is that some demographic attributes are under/over-represented in each of the two groups, and re-weighting each student allows one to construct a sample that is representative of the target population.</li>
 </ol>
-<p>This vignette illustrates the latter approach using the <a href="https://cran.r-project.org/web/packages/twang/index.html">twang</a> package in R. The <code>twang</code> package allows one to estimate the propensity scores using gradient boosted trees, a data-driven, nonparametric tree-based method that estimates the propensity score by combining many decision trees built sequentially, each modeling the residuals from the previous tree. Estimating the propensity scores this way allows one to rely on a robust algorithm for arriving at the estimated propensity scores rather than investing additional effort to manually model the propensity scores using a parametric model like logistic regression. Once the propensity score weights are derived, one could leverage the <a href="https://cran.r-project.org/web/packages/survey/index.html">survey</a> package in R to incorporate the weights in drawing inference via functions like <code>svyglm</code> (Generalized Linear Models for complex survey samples).</p>
+<p>This vignette illustrates the latter approach using the <a href="https://CRAN.R-project.org/package=twang">twang</a> package in R. The <code>twang</code> package allows one to estimate the propensity scores using gradient boosted trees, a data-driven, nonparametric tree-based method that estimates the propensity score by combining many decision trees built sequentially, each modeling the residuals from the previous tree. Estimating the propensity scores this way allows one to rely on a robust algorithm for arriving at the estimated propensity scores rather than investing additional effort to manually model the propensity scores using a parametric model like logistic regression. Once the propensity score weights are derived, one could leverage the <a href="https://CRAN.R-project.org/package=survey">survey</a> package in R to incorporate the weights in drawing inference via functions like <code>svyglm</code> (Generalized Linear Models for complex survey samples).</p>
 <p>Although this vignette leverages R, the folks at RAND have also released code and <a href="https://www.rand.org/statistics/twang/tutorials.html">tutorials</a> for STATA, SAS, and other platforms. The interested reader should go there for additional tutorials.</p>
 </div>
 <div id="toy-data-set-writing-center-at-a-community-college" class="section level1">

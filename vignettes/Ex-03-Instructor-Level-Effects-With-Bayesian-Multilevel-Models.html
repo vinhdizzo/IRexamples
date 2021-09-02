@@ -12,7 +12,7 @@
 
 <meta name="author" content="Vinh Nguyen" />
 
-<meta name="date" content="2021-08-31" />
+<meta name="date" content="2021-09-01" />
 
 <title>Example 3: Accounting for Instructor-level Effects with Bayesian Multilevel Models</title>
 
@@ -156,7 +156,7 @@ code span.ot { color: #007020; }
 <div class="inner">
 <h1 class="title toc-ignore">Example 3: Accounting for Instructor-level Effects with Bayesian Multilevel Models</h1>
 <h3 class="author">Vinh Nguyen</h3>
-<h3 class="date">2021-08-31</h3>
+<h3 class="date">2021-09-01</h3>
 </div>
 </header>
 
@@ -180,7 +180,7 @@ code span.ot { color: #007020; }
     <section id="main-content">
 <div id="introduction-instructor--or-section-level-effects-in-program-evaluation" class="section level1">
 <h1>Introduction: Instructor- or Section-level Effects in Program Evaluation</h1>
-<p>In the propensity score weight <a href="./01-Propensity-Score-Weights-Using-GBM.html">vignette</a>, we saw how one might evaluate a student support program using propensity scores to estimate the causal effects of the program. The example used for illustration involves the <code>writing_center</code> data from the <code>IRexamples</code> package. Briefly, the data set contains students’ first enrollment/attempt in ENG 1, a first year college level writing course, over several years. Students may choose to receive additional support outside of the classroom at the college’s writing center by enrolling in a 0.5-unit writing center/conference support course. Students may use the writing center as a study center where they have access to computers, dictionaries, thesauri, etc. At the center, students may also schedule 1:1 conferences with the instructor on duty, to get assistance and/or feedback on their writing by bringing a writing prompt or draft of their paper. Students registered for this support course are required to spend at least 12 hours in the center, and to have at least 2 formal conferences.</p>
+<p>In the propensity score weight <a href="./Ex-01-Propensity-Score-Weights-Using-GBM.html">vignette</a>, we saw how one might evaluate a student support program using propensity scores to estimate the causal effects of the program. The example used for illustration involves the <code>writing_center</code> data from the <code>IRexamples</code> package. Briefly, the data set contains students’ first enrollment/attempt in ENG 1, a first year college level writing course, over several years. Students may choose to receive additional support outside of the classroom at the college’s writing center by enrolling in a 0.5-unit writing center/conference support course. Students may use the writing center as a study center where they have access to computers, dictionaries, thesauri, etc. At the center, students may also schedule 1:1 conferences with the instructor on duty, to get assistance and/or feedback on their writing by bringing a writing prompt or draft of their paper. Students registered for this support course are required to spend at least 12 hours in the center, and to have at least 2 formal conferences.</p>
 <p>Suppose course success in ENG 1 is the outcome of interest. As described in the previous vignette, a regression model comparing writing center enrollment to non-enrollment with adjustment variables or group comparisons weighted by propensity score weights are common approaches for evaluating the impact of the writing center on course success. However, if we were to carefully consider the data sample and structure, we would recognize the natural clustering of students in sections taught by the same instructor. This clustering may give rise to correlated data within a section or among students taught by the same instructor (i.e., non-independent observations). Inferences obtained by the two aforementioned approaches may be flawed in that estimates for both the writing center impact and the associated standard errors may be inaccurate due to a violation of the independence assumption.</p>
 <p>A natural first step that one might consider to account for clustering is to fit a Generalized Linear Model (GLM) with fixed effects for each section or each instructor (i.e., using section and/or instructor flags as adjustment variables). Although intuitive and straightforward, this approach is usually not recommended in practice when the number of clusters are large and the number of observations in each cluster are small because there is insufficient data (small sample size) to estimate the large number of parameters (number of fixed effects plus other adjustment variables). Those trained in econometrics may point to <a href="https://www.econometrics-with-r.org/10-3-fixed-effects-regression.html">de-meaning</a> the outcome variable and adjustment variables in linear regression / ordinary least squares to avoid estimation of the fixed effects, but the mathematics do not work out as nicely in non-linear models such as GLM’s with non-linear link functions. In the writing center example, we have many sections, but most sections have less than 25 students, as seen below.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(IRexamples) <span class="co"># contains writing_center data</span></span>
