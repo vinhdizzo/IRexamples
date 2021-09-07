@@ -1,0 +1,3 @@
+^vignettes/[0-9A-Za-z_.-]+.html$
+^vignettes/images
+^vignettes/[0-9A-Za-z_.-]+.Rmd_$
