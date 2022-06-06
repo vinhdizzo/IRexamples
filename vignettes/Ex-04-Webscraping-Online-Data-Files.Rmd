@@ -66,7 +66,7 @@ install.packages('RSelenium', repos='https://cran.r-project.org')
 
 ## Rtools to access the `zip` command in Windows
 
-We will be making use of the `makeFirefoxProfile` function from `RSelenium`, which will require the `zip` command to package the results.  Most Windows systems do not come with this command.  The easiest way to get access to this is to install [Rtools](https://cran.r-project.org/bin/windows/Rtools/) on the Windows system.
+We will be making use of the `makeFirefoxProfile` function from `RSelenium`, which will require the `zip` command to package the results.  Most Windows systems do not come with this command.  The easiest way to get access to this is to install [Rtools](https://cran.r-project.org/bin/windows/Rtools/) on the Windows system.  For Rtools 4.0 or earlier, remember to [add](https://cran.r-project.org/bin/windows/Rtools/rtools40.html) the the make utilities into the `PATH` environment variable.
 
 # Summary of Webscraping Workflow
 
