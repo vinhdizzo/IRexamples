@@ -6,7 +6,7 @@
 ## setwd('..')
 ## install('IRexamples')
 
-##' @import dplyr twang survey ggplot2 ggthemes rstanarm RSelenium rvest DisImpact forcats
+##' @import dplyr twang survey ggplot2 ggthemes rstanarm RSelenium rvest DisImpact forcats tidygeocoder maps geodist sf tigris tidycensus
 foo <- function() {
   1
 }
