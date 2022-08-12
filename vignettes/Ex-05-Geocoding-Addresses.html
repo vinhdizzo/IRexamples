@@ -12,7 +12,7 @@
 
 <meta name="author" content="Vinh Nguyen" />
 
-<meta name="date" content="2021-09-14" />
+<meta name="date" content="2022-08-11" />
 
 <title>Example 5: Geocoding Addresses and Spatial Applications</title>
 
@@ -156,7 +156,7 @@ code span.ot { color: #007020; }
 <div class="inner">
 <h1 class="title toc-ignore">Example 5: Geocoding Addresses and Spatial Applications</h1>
 <h3 class="author">Vinh Nguyen</h3>
-<h3 class="date">2021-09-14</h3>
+<h3 class="date">2022-08-11</h3>
 </div>
 </header>
 
@@ -225,7 +225,7 @@ code span.ot { color: #007020; }
 <h2>Nominatim Server via Docker (Optional; Recommended for Private Data)</h2>
 <div id="data-privacy-in-geocoding-services" class="section level3">
 <h3>Data Privacy in Geocoding Services</h3>
-<p>As mentioned in the introduction section, addresses can be highly personal, and whether or not the data could be shared with a third-party organization is subject to the local institution’s policies. It is recommended that the user reviews the data privacy and retention policies of the geocoding <a href="(https://jessecambon.github.io/tidygeocoder/articles/geocoder_services.html)">service</a> that they choose to use to determine if there are any concerns with sending addresses to the geocoding service.</p>
+<p>As mentioned in the introduction section, addresses can be highly personal, and whether or not the data could be shared with a third-party organization is subject to the local institution’s policies. It is recommended that the user reviews the data privacy and retention policies of the geocoding <a href="https://jessecambon.github.io/tidygeocoder/articles/geocoder_services.html">service</a> that they choose to use to determine if there are any concerns with sending addresses to the geocoding service.</p>
 <p>For example, the <a href="https://www.openstreetmap.org/#map=14/38.5311/-121.7721">public</a> Nominatim (geocoding based on OSM data) server’s <a href="https://operations.osmfoundation.org/policies/nominatim/">usage policy</a> states, <em>“Please do not submit personal data or other confidential material to any of our services.”</em> It is unclear from the OpenStreetMap Foundation’s <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy">privacy policy</a> if submitted addresses are retained anywhere, and if so, for how long.</p>
 <p>The <a href="https://geocoding.geo.census.gov/">geocoding service by the US Census Bureau</a> does not publish any information regarding data privacy on their website, but an inquiry email asking for this resulted in the following response, dated September 1, 2021:</p>
 <blockquote>
@@ -243,7 +243,7 @@ code span.ot { color: #007020; }
 <div id="one-solution-nominatim-server" class="section level3">
 <h3>One Solution: Nominatim Server</h3>
 <p>One privacy-respecting approach to geocoding is to install <a href="https://nominatim.org/">Nominatim</a> on a local server, and use that server for geocoding. That is, we can set up a web server with OSM data loaded into a PostgreSQL database, where the user could geocode with the local server (essentially a lookup in the database). Data never leaves the local network during the geocoding process, or even the local computer if the service is set up as outlined in this vignette.</p>
-<p>In subsequent sections, we illustrate how to implement this using <a href="https://www.docker.com/">Docker</a> on a local computer running Windows 10. The <a href="https://www.nominatim.org/release-docs/latest/admin/Installation/#hardware">documentation</a> suggests a server with at least 64GB of ram and 900GB of disk space for a full planet data import (as of 8/31/2021). However, the entire planet’s data is not necessary in nearly all institutional research applications. For example, those working in the California Community College system could probably get away with the <a href="https://download.geofabrik.de/north-america/us/california.html">California</a> region, <a href="http://download.geofabrik.de/north-america/us-west.html">US West</a> region or the <a href="http://download.geofabrik.de/north-america/us.html">United States of America</a> region. For this vignette, setup was done using the California region on a quad-core laptop with 16GB of memory and 200GB of free disk space (the US region did not work given the hardware constraints). The user will set the resources allocated to Docker later as Nominatim does not require the computer’s full resources.</p>
+<p>In subsequent sections, we illustrate how to implement this using <a href="https://www.docker.com/">Docker</a> on a local computer running Windows 10. The <a href="https://nominatim.org/release-docs/latest/admin/Installation/#hardware">documentation</a> suggests a server with at least 64GB of ram and 900GB of disk space for a full planet data import (as of 8/31/2021). However, the entire planet’s data is not necessary in nearly all institutional research applications. For example, those working in the California Community College system could probably get away with the <a href="https://download.geofabrik.de/north-america/us/california.html">California</a> region, <a href="http://download.geofabrik.de/north-america/us-west.html">US West</a> region or the <a href="http://download.geofabrik.de/north-america/us.html">United States of America</a> region. For this vignette, setup was done using the California region on a quad-core laptop with 16GB of memory and 200GB of free disk space (the US region did not work given the hardware constraints). The user will set the resources allocated to Docker later as Nominatim does not require the computer’s full resources.</p>
 </div>
 <div id="step-1-download-osm-map-data" class="section level3">
 <h3>Step 1: Download OSM Map Data</h3>
@@ -1079,7 +1079,7 @@ code span.ot { color: #007020; }
 </div>
 <div id="race-and-ethnicity" class="section level2">
 <h2>3. Race and Ethnicity</h2>
-<p>Working with race and ethnicity data from the Census is not as straightforward as one would expect. It’s important to understand how the information is gathered. <a href="https://www.cosb.us/home/showpublisheddocument?id=5935">This</a> sheet describes how race and ethnicity are asked in two questions by the Census. Based on how these questions are asked and how the options are presented, it’s important to recognize that respondents could:</p>
+<p>Working with race and ethnicity data from the Census is not as straightforward as one would expect. It’s important to understand how the information is gathered. <a href="https://www.cosb.us/home/showpublisheddocument/5935/">This</a> sheet describes how race and ethnicity are asked in two questions by the Census. Based on how these questions are asked and how the options are presented, it’s important to recognize that respondents could:</p>
 <ol style="list-style-type: decimal">
 <li>Check more than 1 race categories in the race question.</li>
 <li>Respond if they are of Hispanic origins or not in the ethnicity question.</li>
