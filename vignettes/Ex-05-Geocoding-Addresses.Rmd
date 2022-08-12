@@ -94,12 +94,14 @@ On Windows 10, click the start menu and type *"Edit local users and groups"*.  G
 The default Docker Engine settings allocate the following resources to Docker:
 
 <!-- ![](./images/Docker_Engine_Settings_1.png) -->
-![](http://www.nguyenvq.com/img/IRexamples/Docker_Engine_Settings_1.png)
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Docker_Engine_Settings_1.png) -->
+![](https://live.staticflickr.com/65535/52280997584_32b19dd244_o.png){width=100%}
 
 These default settings work for the Southern California file, but are insufficient for larger map files.  The following settings work for the California and US West region files:
 
 <!-- ![](./images/Docker_Engine_Settings_2.png) -->
-![](http://www.nguyenvq.com/img/IRexamples/Docker_Engine_Settings_2.png)
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Docker_Engine_Settings_2.png) -->
+![](https://live.staticflickr.com/65535/52280733366_af785557c3_o.png){width=100%}
 
 For the US file, more resources should be allocated.
 
@@ -515,7 +517,8 @@ ggplot(ccc_list_geo2, aes(long, lat), color = "grey99") +
 ```
 
 <!-- ![](./images/ccc_map.png){width=50%} -->
-![](http://www.nguyenvq.com/img/IRexamples/ccc_map.png){width=50%}
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/ccc_map.png){width=50%} -->
+![](https://live.staticflickr.com/65535/52281215785_dfb105b93c_o.png){width=50%}
 
 The following shows how to visualize the map of the US:
 ```R
@@ -529,7 +532,8 @@ ggplot(ccc_list_geo2, aes(long, lat), color = "grey99") +
 ```
 
 <!-- ![](./images/ccc_map_us.png){width=50%} -->
-![](http://www.nguyenvq.com/img/IRexamples/ccc_map_us.png){width=50%}
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/ccc_map_us.png){width=50%} -->
+![](https://live.staticflickr.com/65535/52281215770_46b517df91_o.png){width=100%}
 
 With the geographical coordinates, the geocoded data set could also be exported and then imported in other platforms for visualization such as Tableau, ArcGIS, or QGIS.
 

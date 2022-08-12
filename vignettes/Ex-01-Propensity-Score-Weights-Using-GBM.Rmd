@@ -213,7 +213,8 @@ plot(ps_fit_att, plots='es') ## plots=3
 ```
 <!-- ![](./images/ps_plot_es.png){width=100%} -->
 <!--![](https://drive.google.com/uc?export=view&id=1L9FsCXuLxFtGTBlXCp_hEASZ3Bzs4x0G){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/ps_plot_es.png){width=100%}
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/ps_plot_es.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280748323_2962465b2c_o.png){width=100%}
 
 First, let's restrict our attention to the left pane, `es.mean.ATT`.  This pane shows us results of a tree that minimizes the average standardized difference for the ATT estimand.  Each point represents the mean difference between treatment and control for one covariate on the vertical axis.  On the horizontal axis, the mean difference is shown for the "Unweighted" (no adjustment) scenario and the "Weighted" (adjusted) scenario.  The visualization attempts to show the lack of balance across covariates before incorporating propensity score weights, and the (hopefully) balance in covariates after incorporating propensity score weights.  A standardized difference below 0.1 would indicate reasonable balance.
 
@@ -238,7 +239,8 @@ plot(ps_fit_att, plots='boxplot') ## plots=2
 ```
 <!-- ![](./images/ps_plot_boxplot.png){width=100%} -->
 <!--![](https://drive.google.com/uc?export=view&id=1JhZBhmmOxnNVplhoFehlmMxUJEWdtNxY){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/ps_plot_boxplot.png){width=100%}
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/ps_plot_boxplot.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280997459_9f44d845a8_o.png){width=100%}
 
 Focusing on the left pane of the previous visualization, we see that those in group 2 (treatment) generally have higher propensity to be in the treatment group compared to those in group 1 (control).  In general, although the distributions differ between the two groups, there is still overlap across the propensity score space (0-1).  If there is very little overlap (e.g., those in treatment are concentrated towards 1 and those in control are concentrated towards 0), then the use of propensity scores may not be as useful in drawing causal inference.
 
@@ -390,7 +392,8 @@ summary(ps_fit_att$gbm.obj, n.trees=ps_fit_att$desc$es.mean.ATT$n.trees)
 ```
 <!-- ![](./images/ps_plot_influence.png){width=100%} -->
 <!--![](https://drive.google.com/uc?export=view&id=1DzG31VNw7EY8KdxaHNYK0Jordao1jdtV){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/ps_plot_influence.png){width=100%}
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/ps_plot_influence.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280733301_831ef61cd8_o.png){width=100%}
 
 The default visualizations provided in the `twang` package are very useful from an analyst's perspective.  However, one might want to do some tweaking to better present the impact of the propensity score weights on balance in the covariates to a wider audience.
 
@@ -464,7 +467,8 @@ d_demo_summ %>%
 ```
 <!-- ![](./images/ps_plot_balance.png){width=100%} -->
 <!--![](https://drive.google.com/uc?export=view&id=1f1YDn2nb6uLoy4LmkOxtUo33zMYiNe6x){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/ps_plot_balance.png){width=100%}
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/ps_plot_balance.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52279750317_4d5f5912b6_o.png){width=100%}
 
 From this visualization, we see that those that enrolled in the writing center tend to be older than those that did not enroll in the writing center (top row, small dot).  However, after incorporating the propensity score weights, the difference in age is much closer to zero (top row, large dot).  Similarly, for the last row, those not enrolled in the writing center have higher rates of online modality in the primary ENG 1 course compared to those enrolled in the writing center (bottom row, small dot).  However, after incorporating the propensity score weights, the difference in online modality is much closer to zero (bottow row, large dot).  This visualization shows that the propensity score weights are doing a reasonable job at attaining balance in the covariates (large dots close to 0).
 

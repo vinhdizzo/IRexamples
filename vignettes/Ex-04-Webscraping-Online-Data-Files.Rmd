@@ -46,8 +46,9 @@ docker pull selenium/standalone-firefox:2.53.0
 ```
 
 <!-- ![](./images/Docker_Pull_Selenium.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=14jwBIfLjMmn2qR4a4DheaEer88mGrkCM){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/Docker_Pull_Selenium.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=14jwBIfLjMmn2qR4a4DheaEer88mGrkCM){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Docker_Pull_Selenium.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280997544_291a3e088f_o.png){width=100%} 
 
 The previous command downloads the specified container image.  In this vignette, we pick Firefox over Chrome as it allows for more control in the browser (navigating and clicking).  We stick to a single version, Firefox 2.53.0, in order to ensure consistency (codes and commands may be different depending on the version of the browser).
 
@@ -88,14 +89,16 @@ This workflow will be leveraged in a few examples in this vignette.
 In this example, we illustrate how to download each college's data file on the CCC [Scorecard](https://scorecard.cccco.edu/scorecard.aspx).  That is, the goal is to download the data provided for each college present in the college dropdown, as shown here:
 
 <!-- ![](./images/Scorecard_College_Dropdown.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1ug0Cs1hBP2dSimQuVjRnuDdKyeplAZAr){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/Scorecard_College_Dropdown.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1ug0Cs1hBP2dSimQuVjRnuDdKyeplAZAr){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Scorecard_College_Dropdown.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280733271_4a7feee145_o.png){width=100%} 
 
 Before going into technical details, let's first explore the site and formulate a strategy.  On the [Scorecard](https://scorecard.cccco.edu/scorecard.aspx) site, select one college.  We'll select *Irvine Valley College* for illustration.  The browser should take the visitor to the following page:
 
 <!-- ![](./images/Scorecard_IVC.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1ppbhd_r8zNzw-Kgbx-cgjlrFc1bmc30l){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/Scorecard_IVC.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1ppbhd_r8zNzw-Kgbx-cgjlrFc1bmc30l){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Scorecard_IVC.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52281215570_5f9cc90a12_o.png){width=100%} 
 
 There are two things worth noting:
 
@@ -103,8 +106,9 @@ There are two things worth noting:
 2. To download the data file, scroll to the bottom, and notice the *Five Year* download button, as seen below.  The button has the URL `https://scorecard.cccco.edu/fiveyear.aspx?CollegeID=892`, and clicking it downloads a file named `892_FiveYear.xlsx`.
 
 <!-- ![](./images/Scorecard_Download_Button.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=13g2aR0bTwRkucxSN4z3wqIZv9pQDr7Oo){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/Scorecard_Download_Button.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=13g2aR0bTwRkucxSN4z3wqIZv9pQDr7Oo){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Scorecard_Download_Button.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280748213_f0894fb04f_o.png){width=100%} 
 
 Now, recall the goal is to download the aforementioned excel file for all colleges.  Based on the previous exploration, one could download the files by repeatedly visiting the URL `https://scorecard.cccco.edu/fiveyear.aspx?CollegeID=YYY`, where we change `YYY` to be various college codes.  A general webscraping strategy is as follows:
 
@@ -132,8 +136,9 @@ The previous command has a few parameters worth noting:
 The *Windows Powershell* terminal should look similar to the following after running the command:
 
 <!-- ![](./images/Docker_Run.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1VZIZQOuWVHfWrR4fXVq33aV4RtAabcmH){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/Docker_Run.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1VZIZQOuWVHfWrR4fXVq33aV4RtAabcmH){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Docker_Run.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52279750352_c79f0d50b9_o.png){width=100%} 
 
 Next, let's launch R.  In R, we create a Firefox profile, and connect to the Selenium Web Driver / Server using the following code:
 
@@ -238,8 +243,9 @@ remDr$screenshot(file='RSelenium_Screenshot_Scorecard.png')
 Running the `remDr$screenshot(display=TRUE)` line should open up the following in an image viewer:
 
 <!-- ![](./images/RSelenium_Screenshot_Scorecard.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1TbGwqOU8d9sIOSgtEjtI1-njw4Ug2sAu){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/RSelenium_Screenshot_Scorecard.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1TbGwqOU8d9sIOSgtEjtI1-njw4Ug2sAu){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/RSelenium_Screenshot_Scorecard.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52281215640_391b80d119_o.png){width=100%} 
 
 The screenshot function is especially useful during the development phase of the script as it allows one to debug the process by viewing what the browser looks like.  Whenever code errors out or when things don't go as planned, debug the problematic steps with the screenshot function.
 
@@ -385,8 +391,9 @@ for (i in seq_along(college_codes)) {
 After the above code completes, the user should see the downloaded files at `C:\Users\USERNAME\Downloads\Selenium-Downloads` on the host computer, as seen below:
 
 <!-- ![](./images/Scorecard_Downloaded_Files.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1gFKy9plEvyO93ldkfQYxleotDfPj6XeO){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/Scorecard_Downloaded_Files.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1gFKy9plEvyO93ldkfQYxleotDfPj6XeO){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Scorecard_Downloaded_Files.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280997379_521f6d45dc_o.png){width=100%} 
 
 The user could now close R, then run the following command in *Windows Powershell* terminal to stop Selenium Server in Docker:
 
@@ -397,8 +404,9 @@ docker stop $(docker ps -q) # to stop when done
 The terminal should look similar to the following:
 
 <!-- ![](./images/Docker_Stop.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1AnKQhUwRrdx3KN30mc5bPtP29jKUodcT){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/Docker_Stop.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1AnKQhUwRrdx3KN30mc5bPtP29jKUodcT){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Docker_Stop.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280997504_e41fdebbc1_o.png){width=100%} 
 
 This completes the first example.
 
@@ -409,14 +417,16 @@ This completes the first example.
 In this next example, we seek to download all data files from the [Student Success Metrics](https://www.calpassplus.org/LaunchBoard/Student-Success-Metrics.aspx).  The page should look like the following:
 
 <!-- ![](./images/SSM_Landing_Page.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1s7lHmfZTDOYoXX5NTIUTfzbVOk-xA5gI){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/SSM_Landing_Page.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1s7lHmfZTDOYoXX5NTIUTfzbVOk-xA5gI){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/SSM_Landing_Page.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280748013_b0dd2e364d_o.png){width=100%} 
 
 If one were to click the *All Students* journey, then the *College* radio button, then *Irvine Valley College* from the dropdown menu, then the *View* button, the page would look as follows:
 
 <!-- ![](./images/SSM_All_Students_College.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=17HKesFqAdqBFnumVQ2u-l2ENIVfR3RpL){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/SSM_All_Students_College.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=17HKesFqAdqBFnumVQ2u-l2ENIVfR3RpL){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/SSM_All_Students_College.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52279750107_3181b1fc1c_o.png){width=100%} 
 
 Notice the *Export Data to CSV* button.  If one were to click on that button, the browser would attempt to save the file `StudentSuccessMetrics_AllStudents_IrvineValleyCollege.csv`.  At the time this vignette was written, there was a spinning wheel shown on the page for about 10 seconds before the download prompt appeared.  This suggests that the download does not occur immediately, and that it would be a good idea to incorporate a pause of at least 10 seconds after this button is pressed to ensure a file is downloaded.
 
@@ -451,12 +461,14 @@ The strategy outlined previously requires the user to specify the clicking of va
 To illustrate, let's revisit the main SSM [page](https://www.calpassplus.org/LaunchBoard/Student-Success-Metrics).  Scroll to the location of interest, which in our case, would be the *All Students* link.  Click the *SelectorGadget* extension in Chrome (icon at the top in the extensions section), then move the mouse over the *All Students* link (the picture box).  Click the link.  At the bottom where the extension is shown, click the `XPath` button, and the `XPath` should display.  These two steps should look like the following:
 
 <!-- ![](./images/SelectorGadget_All_Students.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1W3XMDGVEpOvxxLqe5Mt6zI3zsmlFVDLY){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_All_Students.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1W3XMDGVEpOvxxLqe5Mt6zI3zsmlFVDLY){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_All_Students.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280733206_95d2e66992_o.png){width=100%} 
 
 <!-- ![](./images/SelectorGadget_All_Students_XPath.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1j9ECnkS2r5Fqu_xIs_GlIp1szrXK0s72){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_All_Students_XPath.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1j9ECnkS2r5Fqu_xIs_GlIp1szrXK0s72){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_All_Students_XPath.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52281215555_b8bdd4a40c_o.png){width=100%} 
 
 The extension should then show the `XPath` to be:
 ```
@@ -466,30 +478,35 @@ The extension should then show the `XPath` to be:
 Turn off the *SelectorGadget* extension by clicking on its icon at the top.  Let's click the *All Students* link.  After the page loads, let's identify the `XPath` of the *College* radio button at the top:
 
 <!-- ![](./images/SelectorGadget_College_Button.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1_340v2gITEI4NhUHrXw0p9mZvficQK6A){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_College_Button.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1_340v2gITEI4NhUHrXw0p9mZvficQK6A){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_College_Button.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280997294_dfdac06245_o.png){width=100%} 
 
 Turn off the *SelectorGadget* extension by clicking on its icon at the top, then click the *College* radio button.  Let's identify the `XPath` of the *View* button at the top:
 
 <!-- ![](./images/SelectorGadget_View_Button.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1_PBAj_DMFWWppZvv2L75pEcNYKZ4Q8Ar){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_View_Button.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1_PBAj_DMFWWppZvv2L75pEcNYKZ4Q8Ar){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_View_Button.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280748038_c4bd4ffe6f_o.png){width=100%} 
 
 Click *Clear* in the *SelectorGadget* extension at the bottom.  Let's identify the `XPath` of the *Export Data to CSV* button at the top:
 
 <!-- ![](./images/SelectorGadget_Export.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1mHu3avxkBnmnnjOLrQgJB56EhXhskjYy){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_Export.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1mHu3avxkBnmnnjOLrQgJB56EhXhskjYy){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_Export.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280997264_79c0275a60_o.png){width=100%} 
 
 Click *Clear* in the *SelectorGadget* extension at the bottom.  Let's identify the `XPath` of the *Journey Type* and *College* dropdown menus at the top:
 
 <!-- ![](./images/SelectorGadget_Journey_Type_Dropdown.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=19ipWAZ74yAF0WZ67QQkufwMTL5nxUvnj){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_Journey_Type_Dropdown.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=19ipWAZ74yAF0WZ67QQkufwMTL5nxUvnj){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_Journey_Type_Dropdown.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52281215490_76501fc93c_o.png){width=100%} 
 
 <!-- ![](./images/SelectorGadget_College_Dropdown.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1TNdp4dH0TUNbWxVG0zCh7daflCo9rsqE){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_College_Dropdown.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1TNdp4dH0TUNbWxVG0zCh7daflCo9rsqE){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/SelectorGadget_College_Dropdown.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280733126_357e8645a4_o.png){width=100%} 
 
 We now have all the `XPath` locations of the links we need to execute the plan illustrated in the previous section:
 
@@ -541,20 +558,23 @@ The reason for this is because the `XPath` provided by SelectorGadget is actuall
 First, while on the SSM [page](https://www.calpassplus.org/LaunchBoard/Student-Success-Metrics), press *Ctrl + Shift + J* on the keyboard to bring up *Developer Tools*, as seen here:
 
 <!-- ![](./images/Chrome_Developer_Tools.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=14aRr0aOkTUXY16JtzBTzDBjig0oTj7uz){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/Chrome_Developer_Tools.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=14aRr0aOkTUXY16JtzBTzDBjig0oTj7uz){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Chrome_Developer_Tools.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280997619_5daec0a206_o.png){width=100%} 
 
 Then select the *Select an Element* icon in the top left (assisted by a box in red), or press *Ctrl + Shift + C*, to be able to select an element on the page and see results:
 
 <!-- ![](./images/Chrome_Select_An_Element.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=11B0Zu5vBREMLLJZDSFd94Rv8YXx8PqD7){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/Chrome_Select_An_Element.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=11B0Zu5vBREMLLJZDSFd94Rv8YXx8PqD7){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Chrome_Select_An_Element.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52279750412_77745ca995_o.png){width=100%} 
 
 Move the mouse cursor over the *All Students* link and click it for the console to show a description of it, as seen here:
 
 <!-- ![](./images/Chrome_Select_All_Students.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1bo1P9z5gbyKPE15aZTflh04FAgRzKv2j){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/Chrome_Select_All_Students.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1bo1P9z5gbyKPE15aZTflh04FAgRzKv2j){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/Chrome_Select_All_Students.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280733416_ca620eb64f_o.png){width=100%} 
 
 Notice that the link has an ID of `journeyBox5`.  Similar to the College radio button, View button, and Export button before, the `Xpath` for the *All Students* could be specified with the following:
 
@@ -696,8 +716,9 @@ Sys.sleep(5)
 At this step, running the screenshot function should show the following:
 
 <!-- ![](./images/RSelenium_Screenshot_View_Button.png){width=100%} -->
-<!--![](https://drive.google.com/uc?export=view&id=1BMdgiKBMBSEL5nnsjHi987dYWgcRvyMU){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/RSelenium_Screenshot_View_Button.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1BMdgiKBMBSEL5nnsjHi987dYWgcRvyMU){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/RSelenium_Screenshot_View_Button.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280997424_53f49e6cc6_o.png){width=100%} 
 
 Next, we identify the remaining buttons and determine the values in the dropdown menus of interest.
 

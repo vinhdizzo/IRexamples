@@ -415,8 +415,9 @@ d_demo_summ_trick %>%
 #dev.off()
 ```
 <!-- ![](./images/survey_plot_balance.png) -->
-<!--![](https://drive.google.com/uc?export=view&id=168uVi5VV8CQjOkZVl_snfdEjDBy1-7JW){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/survey_plot_balance.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=168uVi5VV8CQjOkZVl_snfdEjDBy1-7JW){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/survey_plot_balance.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52279750057_d1f0f4ec33_h.jpg){width=100%}
 
 Let's interpret the previous visualization.  Prior to applying the survey weights, responders tend to be older compared to the full sample (top row, small dot).  After incoporating survey weights, the responders have a similar age distribution compared to the full sample as expressed by the mean (top row, large dot).  Similarly, prior to applying the survey weights, responders have a lower rate of students taking any online course compared to the full sample that has a higher online course rate (last row, small dot).  After incorporating the survey weights, the difference in online course rate is closer to 0.  Overall, there was imbalance on a few variables (`Age`, `Female`, `GPA`, and `Ethnicity:White`) prior to the use of survey weights.  The use of survey weights reduced the imbalance across all variables (absolute standardized difference less than 0.1).
 

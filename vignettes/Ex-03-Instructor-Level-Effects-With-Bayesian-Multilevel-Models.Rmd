@@ -723,8 +723,9 @@ ggplot(data = a_df, aes(x = Rank, y = Varying_Intercept)) +
 #dev.off()
 ```
 <!-- ![](./images/instructor_plot.png) -->
-<!--![](https://drive.google.com/uc?export=view&id=1T0X11XKDeG8n2zwOeQGMfpAH7RyfuNfn){width=100%}-->
-![](http://www.nguyenvq.com/img/IRexamples/instructor_plot.png){width=100%}
+<!-- ![](https://drive.google.com/uc?export=view&id=1T0X11XKDeG8n2zwOeQGMfpAH7RyfuNfn){width=100%} -->
+<!-- ![](http://www.nguyenvq.com/img/IRexamples/instructor_plot.png){width=100%} -->
+![](https://live.staticflickr.com/65535/52280997484_34b3c48f0a_o.png){width=100%}
 
 # References and Further Reading
 
