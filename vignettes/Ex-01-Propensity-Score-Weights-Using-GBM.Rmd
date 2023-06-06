@@ -12,7 +12,9 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
+```{r, include=FALSE}
+knitr::opts_chunk$set(error=TRUE) # in case CRAN vignette build does not have internet, fail gracefully
+```
 # Introduction: Program Evaluation in Education
 
 In education, support programs are offered with a particular goal in mind, and in most cases, that goal is to increase the students' likelihood of success.  Whether that success is short-term (completion of a course) or long-term (achievement of a degree) depends on the intent of the program.  A support program can be broad and open to all students, or targeted and open to a subset of students.

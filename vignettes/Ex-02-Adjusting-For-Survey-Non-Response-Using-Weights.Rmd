@@ -12,7 +12,9 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
+```{r, include=FALSE}
+knitr::opts_chunk$set(error=TRUE) # in case CRAN vignette build does not have internet, fail gracefully
+```
 # Introduction: Survey Non-response Bias
 
 Surveys allow institutional researchers to collect and measure valuable information from students/constituents for assessment (eg, satisfaction and perception).  They are especially useful when all individuals invited to participate actually respond.  However, in reality, the response rate is typically very low, especially when the survey is administered by email.

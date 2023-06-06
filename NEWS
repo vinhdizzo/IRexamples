@@ -1,1 +1,3 @@
+* 0.0.3
+  - Vignettes: Added `knitr::opts_chunk$set(error=TRUE)` in vignettes in case CRAN build does not have internet, fail gracefully
 * 0.0.1

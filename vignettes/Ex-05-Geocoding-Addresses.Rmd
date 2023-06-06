@@ -12,7 +12,9 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
+```{r, include=FALSE}
+knitr::opts_chunk$set(error=TRUE) # in case CRAN vignette build does not have internet, fail gracefully
+```
 # Introduction: Geocoding
 
 Location data like student addresses are a rich source of information that could be leveraged for institutions to know where students are concentrated in the surrounding areas, the distance to campus for each student, the commute time to campus for each student, and population-level attributes of geographical areas provided by the U.S. Census Bureau (e.g., the [American Community Survey](https://www.census.gov/programs-surveys/acs) or ACS).  **Geocoding** is the *act of converting an address to its geographical coordinates (longitude and latitude)*.  It is a critical first step to make addresses more useful for analysis by institutional researchers.

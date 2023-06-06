@@ -12,7 +12,9 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
+```{r, include=FALSE}
+knitr::opts_chunk$set(error=TRUE) # in case CRAN vignette build does not have internet, fail gracefully
+```
 # Introduction: Webscraping
 
 Institutional research (IR) professionals often times rely on external sources of data in addition to internal data.  For example, IR professionals in the California Community College (CCC) system may be interested in data provided by the state's Chancellor's Office (CO) such as those on the [Student Success Metrics](https://www.calpassplus.org/LaunchBoard/Student-Success-Metrics.aspx) (SSM), [Data Mart](https://datamart.cccco.edu/Default.aspx), [Scorecard](https://scorecard.cccco.edu/scorecard.aspx), or [Launchboard](https://www.calpassplus.org/LaunchBoard/Home.aspx).  In addition, they may be interested in data provided by the California State University (CSU; e.g., the CSU [admissions dashboard](https://www2.calstate.edu/data-center/institutional-research-analyses/Pages/applications-and-admissions.aspx)) or the University of California (UC; e.g., the UC [admissions dashboard](https://www.universityofcalifornia.edu/about-us/information-center/admissions-source-school)).
