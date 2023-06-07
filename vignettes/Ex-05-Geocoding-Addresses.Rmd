@@ -148,7 +148,7 @@ This command looks very complicated.  Let's dissect it to understand what's goin
 - `-v ~/Downloads/osm-data:/nominatim/data`: this maps the host computer's `C:/Users/USERNAME/Downloads/osm-data` folder to the container's `/nominatim/data` folder, giving the container access the previously downloaded `pbf` file.
 - `-e PBF_PATH=/nominatim/data/california-latest.osm.pbf`: this specifies the `pbf` file to use.  If this were omitted, then `PBF_URL` should be specified, pointing to the online link of the `pbf` file, which will be downloaded on-the-fly during installation.
 - `-v nominatim_pg_data:/var/lib/postgresql/12/main -v`: this maps the volume created earlier in the vignette to the container's `/var/lib/postgresql/12/main` folder.  This is done in order to make the loaded data persist to future runs of the server.  If this is not done, then the data gets imported every single time the server launches.  Importing the map data is very computationally intensive and takes a long time to complete, so saving this data and making it persist is a good idea.  At future runs, the server just launches the web server and can use the previously imported data.
-- `-v ~/Downloads/nominatim-flatnode:/nominatim/flatnode -e NOMINATIM_FLATNODE_FILE=/nominatim/flatnode/flatnode.file`: this [saves](https://nominatim.org/release-docs/3.7.2/admin/Import/#flatnode-files) on import time and disk space, but creates a file that is about 70GB in size located at `~/Downloads/nominatim-flatnode/flatnode.file`.
+- `-v ~/Downloads/nominatim-flatnode:/nominatim/flatnode -e NOMINATIM_FLATNODE_FILE=/nominatim/flatnode/flatnode.file`: this [saves](https://nominatim.org/release-docs/3.7/admin/Import/#flatnode-files) on import time and disk space, but creates a file that is about 70GB in size located at `~/Downloads/nominatim-flatnode/flatnode.file`.
 - `-p 8080:8080`: this forwards the container's port 8080 to the host computer's port 8080.  In R, `tidygeocoder` could geocode using this Nominatim server by pointing to the `http://localhost:8080` URL when specifying a custom API URL.
 
 The California file took about 12 hours to load and launch on a quad-core, 16GB laptop.  The Southern California file took a few hours.  The US West file took less than a day.
@@ -962,7 +962,7 @@ uc_edu %>%
 
 ## 3. Race and Ethnicity
 
-Working with race and ethnicity data from the Census is not as straightforward as one would expect.  It's important to understand how the information is gathered.  [This](https://www.cosb.us/home/showpublisheddocument/5935/) sheet describes how race and ethnicity are asked in two questions by the Census.  Based on how these questions are asked and how the options are presented, it's important to recognize that respondents could:
+Working with race and ethnicity data from the Census is not as straightforward as one would expect.  It's important to understand how the information is gathered.  [This](https://web.archive.org/web/20230607175432/https://www.cosb.us/home/showpublisheddocument/5935/) sheet describes how race and ethnicity are asked in two questions by the Census.  Based on how these questions are asked and how the options are presented, it's important to recognize that respondents could:
 
 1. Check more than 1 race categories in the race question.
 2. Respond if they are of Hispanic origins or not in the ethnicity question.
